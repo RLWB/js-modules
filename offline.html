@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>localStorage test</title>
+</head>
+<script type="text/javascript">
+	function save(){
+		var filedValue = document.getElementById("textfield").value;
+		localStorage.setItem('text',filedValue);
+
+	}
+
+	function load(){
+		var storedValue = localStorage.getItem('text');
+		if(storedValue){
+			document.getElementById('textfield').value = storedValue;
+		}
+	}
+</script>
+<body onload='load()'>
+<input type="text" name="" id="textfield">
+<input type="button" name="" value="save" onclick="save()">
+</body>
+</html>

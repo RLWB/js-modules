@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>localstorage3 remove delate</title>
+</head>
+<body>
+<ul id="box">
+	
+</ul>
+<input type="text" id="ipt">
+<button type="button" id="add" onclick="add()">add</button>
+<button type="button" id="del" onclick="del()">del</button>
+</body>
+<script type='text/javascript'>
+	function add(){
+		var iptValue = document.getElementById('ipt').value;
+		var Obox = document.getElementById('box');
+		Obox.innerHTML += '<li>'+ iptValue +'</li>'
+	}
+	function del(){
+		
+	}
+</script>
+</html>

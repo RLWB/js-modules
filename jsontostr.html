@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<div class="">
+
+</div>
+  </body>
+  <script type="text/javascript">
+    var str = '{"name":"<h1>huirui</h1>","sex":"female"}'
+
+    var obj = JSON.parse(str);
+
+    for (var i in obj){
+      if(i ==='name'){
+        document.getElementsByTagName('div')[0].textContent+=('name:' + obj['name'])
+      }else{
+        // alert('sex:' + obj['sex'])
+        document.getElementsByTagName('div')[0].textContent+=(obj[i])
+      }
+    }
+    // window.onload = function(){
+    //   var i =1;
+    //   var timer = setInterval(function(){
+    //     var htmlStr = i++;
+    //     document.getElementsByTagName('div')[0].innerHTML = htmlStr;
+    //   },1000)
+    //
+    //   document.getElementsByTagName("div")[0].onclick=function(){
+    //     clearInterval(timer)
+    //   }
+    // }
+
+  </script>
+</html>

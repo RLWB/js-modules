@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>formlist</title>
+  </head>
+  <body>
+    <form id='' action="index.html" method="post" onSubmit="checkOut()">
+      <ul>
+        <li>
+          <label for="name">name</label>
+          <input type="text" name="name" id='name' value="">
+        </li>
+        <li>
+          <label for="sex">sex</label>
+          <input type="text" name="sex" id='sex' value="">
+        </li>
+      </ul>
+      <input type="submit" name="name" value="submit" onclick="">
+    </form>
+    <script type="text/javascript">
+    function checkOut(){
+      var oName = document.getElementById('name');
+      var oSex = document.getElementById('sex');
+
+      if (oName.value == '' || oSex.value == '') {
+        alert('The opreation is illagle!');
+        return;
+      }
+
+    }
+    var oInpt = document.getElementsByTagName("input")[0];
+
+    oInpt.onchange=function(){
+      alert(1111);
+    }
+
+    </script>
+  </body>
+</html>

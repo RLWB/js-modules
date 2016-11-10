@@ -1,0 +1,30 @@
+flightHandler({
+"id": 319066,
+"title": "SNI detector，一个用于验证 SNI 服务器域名的 Node.js 命令行工具",
+"url": "http://www.v2ex.com/t/319066",
+"content": "当我们需要验证一个服务器上的 SNI 域名是否正常的时候，通常需要在浏览器或 openssl\r\n来获取到证书，然后检查证书里相应的字段是否包含域名，但这种方式极为不便。\r\n\r\n为了简化验证的过程，我使用 Nodejs 开发了一个小工具 sni-detector 用于验证指定服务\r\n器上的 SNI 是否包含指定的测试域名。\r\n\r\n使用方式非常简单，先使用 NPM 来安装：\r\n\r\n```shell\r\nnpm install -g sni-detecotr\r\n```\r\n\r\n在安装成功后，就可以使用 `sni-detect` 命令来验证了。\r\n\r\n使用 `sni-detect --help` 可以查看相应的参数说明，在此，我以测试域名 `www.baidu.com` 和\r\n`img.baidu.com` 来验证 IP 为 `14.215.177.52` 的服务器为例：\r\n\r\n```shell\r\nsni-detect -t www.baidu.com,img.baidu.com 14.215.177.53\r\n```\r\n\r\n如果返回 `14.215.177.52 OK` 表明验证通过，如果返回 `14.215.177.52 Failue` 表明验证失败。\r\n这里如果需要查看失败的详细信息，可以加上 `--verbose` 参数：\r\n\r\n```\r\nsni-detect -t www.baidu.com,img.baidu.com --verbose 14.215.177.53\r\n```\r\n\r\nPS ：本工具仅支持 Node.js v6+\r\n\r\n本工具也同时开源在 [Github]( https://github.com/zbinlin/node-sni-detector) 上，欢迎提 issue 和 PR 。",
+"content_rendered": "<p>当我们需要验证一个服务器上的 SNI 域名是否正常的时候，通常需要在浏览器或 openssl\n来获取到证书，然后检查证书里相应的字段是否包含域名，但这种方式极为不便。</p>\n<p>为了简化验证的过程，我使用 Nodejs 开发了一个小工具 sni-detector 用于验证指定服务\n器上的 SNI 是否包含指定的测试域名。</p>\n<p>使用方式非常简单，先使用 NPM 来安装：</p>\n<pre><code>npm install -g sni-detecotr\n</code></pre>\n<p>在安装成功后，就可以使用 <code>sni-detect</code> 命令来验证了。</p>\n<p>使用 <code>sni-detect --help</code> 可以查看相应的参数说明，在此，我以测试域名 <code><a href=\"http://www.baidu.com\" rel=\"nofollow\">www.baidu.com</a></code> 和\n<code><a href=\"http://img.baidu.com\" rel=\"nofollow\">img.baidu.com</a></code> 来验证 IP 为 <code>14.215.177.52</code> 的服务器为例：</p>\n<pre><code>sni-detect -t www.baidu.com,img.baidu.com 14.215.177.53\n</code></pre>\n<p>如果返回 <code>14.215.177.52 OK</code> 表明验证通过，如果返回 <code>14.215.177.52 Failue</code> 表明验证失败。\n这里如果需要查看失败的详细信息，可以加上 <code>--verbose</code> 参数：</p>\n<pre><code>sni-detect -t www.baidu.com,img.baidu.com --verbose 14.215.177.53\n</code></pre>\n<p>PS ：本工具仅支持 Node.js v6+</p>\n<p>本工具也同时开源在 <a href=\"https://github.com/zbinlin/node-sni-detector\" rel=\"nofollow\">Github</a> 上，欢迎提 issue 和 PR 。</p>\n",
+"replies": 1,
+"member": {
+"id": 200278,
+"username": "zbinlin",
+"tagline": "",
+"avatar_mini": "//cdn.v2ex.co/gravatar/ea550ee969b09840d7857351230d6145?s=24&d=retro",
+"avatar_normal": "//cdn.v2ex.co/gravatar/ea550ee969b09840d7857351230d6145?s=48&d=retro",
+"avatar_large": "//cdn.v2ex.co/gravatar/ea550ee969b09840d7857351230d6145?s=73&d=retro"
+},
+"node": {
+"id": 436,
+"name": "nodejs",
+"title": "Node.js",
+"title_alternative": "Node.js",
+"url": "http://www.v2ex.com/go/nodejs",
+"topics": 1117,
+"avatar_mini": "//cdn.v2ex.co/navatar/2421/fcb1/436_mini.png?m=1471552129",
+"avatar_normal": "//cdn.v2ex.co/navatar/2421/fcb1/436_normal.png?m=1471552129",
+"avatar_large": "//cdn.v2ex.co/navatar/2421/fcb1/436_large.png?m=1471552129"
+},
+"created": 1478601333,
+"last_modified": 1478601333,
+"last_touched": 1478536688
+})

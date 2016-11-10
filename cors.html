@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+  <script type="text/javascript">
+  // function createCORS(method, url){
+  //     var xhr = new XMLHttpRequest();
+  //     if('withCredentials' in xhr){
+  //         xhr.open(method, url, true);
+  //         // console.log(111)
+  //     }else if(typeof XDomainRequest != 'undefined'){
+  //         var xhr = new XDomainRequest();
+  //         xhr.open(method, url);
+  //     }else{
+  //         xhr = null;
+  //     }
+  //     return xhr;
+  // }
+    window.onload=function(){
+
+      // var request = createCORS('post', 'http://www.baidu.com');
+      // if(request){
+      //     request.onload = function(){
+      //         console.log(111)
+      //     };
+      //     request.send();
+      // }
+      // createCORS("get","http://www.baidu.com")
+      var socket = new WebSockt('ws://www.baidu.com');//http->ws; https->wss
+      socket.send('hello WebSockt');
+      socket.onmessage = function(event){
+          // var data = event.data;
+          console.log(111)
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<ul>
+	<li></li>
+	<li></li>
+</ul>
+</body>
+<script type="text/javascript">
+	window.onload = function(){
+
+
+		var http = new XMLHttpRequest();
+
+		var oLi = document.getElementsByTagName("li");
+
+		// console.log(oLi.length)
+		http.onreadystatechange = function(){
+			if(http.readyState ==4 && http.status == 200){
+				// console.log(JSON.parse(http.response))
+				var obj = JSON.parse(http.response);
+				for(var i = 0; i < oLi.length; i++){
+					oLi[i].innerHTML = obj["tweets"][i]["content"];
+				}
+
+			}
+		}
+    
+		http.open('GET',"tweets.json",true);
+
+		http.send();
+
+	}
+</script>
+</html>
