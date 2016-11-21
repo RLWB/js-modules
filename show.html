@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .card{
+            width: 200px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+        }
+        .title{
+            padding: 15px;
+            border-bottom: 1px solid #ccc;
+        }
+        .wrap{
+            opacity: 1;
+            overflow: hidden;
+            transition: height 700ms ease-out,opacity 300ms ease-out;
+            
+        }
+        .wrap2{
+            height: 0!important;
+            border-bottom: 0!important;
+            opacity: 0;
+        }
+        .content{
+            word-wrap: break-word;
+            word-break: break-all;
+            padding: 15px;
+        }
+        </style>
+    </head>
+    <body>
+    <div class="card">
+        <h1 id="title" class="title" name="1">hello world</h1>
+        <div id="content" class="wrap">
+            <p class="content">goof osodaodksodksaodkoadkaosdkaosdkoasdkaskdkskdaksdkakod</p>
+        </div>
+    </div>
+    <script>
+        window.onload =function(){
+            var oH = document.getElementById('title');
+            var oC = document.getElementById('content');
+            var classVal = oC.getAttribute("class");
+            var oName = oH.getAttribute("name");
+            //addclass//
+            classVal = classVal.concat(" wrap2");
+            rClass = classVal.replace(" wrap2","");
+            oH.onclick = function (){
+                if(oName == 1){
+                    oC.setAttribute("class",classVal);
+                    oName = 2;
+                }else{
+                    oC.setAttribute("class",rClass);
+                    oName = 1;
+                }
+                
+            }
+            var cP = document.getElementsByTagName('p')[0];
+            // console.log(cP.clientHeight)
+            oC.style.height = cP.clientHeight +"px";
+        }
+    </script>
+    </body>
+</html>
