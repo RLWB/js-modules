@@ -7,17 +7,18 @@
   <body>
     <script type="text/javascript">
     // 得到航班信息查询结果后的回调函数
-    var flightHandler = function(data){
-        alert('你查询的航班结果是：票价 ' + data.title + ' 元，' + '余票 ' + data.content + ' 张。');
+    var _ntes_quote_callback = function(data){
+        alert('你查询的航班结果是：票价 ' + JSON.stringify(data));
     };
-      // 提供jsonp服务的url地址（不管是什么类型的地址，最终生成的返回值都是一段javascript代码）
-      var url = "./jsonp.json?id=319066&callback=flightHandler";
-      // 创建script标签，设置其属性
-      var script = document.createElement('script');
-      script.setAttribute('src', url);
-      // 把script标签加入head，此时调用开始
-      document.getElementsByTagName('head')[0].appendChild(script);
+      // // 提供jsonp服务的url地址（不管是什么类型的地址，最终生成的返回值都是一段javascript代码）
+      // var url = "http://api.money.126.net/data/feed/1000002,money.api&callback=_ntes_quote_callback";
+      // // 创建script标签，设置其属性
+      // var script = document.createElement('script');
+      // script.setAttribute('src', url);
+      // // 把script标签加入head，此时调用开始
+      // document.getElementsByTagName('head')[0].appendChild(script);
 
     </script>
+    <script src="http://api.money.126.net/data/feed/1000002,money.api&callback=_ntes_quote_callback" charset="utf-8"></script>
   </body>
 </html>
